@@ -1,0 +1,23 @@
+{
+  "name": "agy-account",
+  "version": "0.1.0",
+  "description": "Local multi-account credential snapshot & switcher for Google Antigravity Desktop and agy CLI on macOS",
+  "type": "module",
+  "bin": {
+    "agy-account": "./dist/cli.js",
+    "agys": "./dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('dist/cli.js', 0o755)\"",
+    "dev": "node --experimental-strip-types src/cli.ts",
+    "test": "node --test dist/**/*.test.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.8.0"
+  }
+}
