@@ -1,62 +1,66 @@
-# agy-account
+# agys (agy-account)
 
-面向 macOS 的 Google Antigravity 桌面客户端与 `agy` CLI 本地多账号切换工具（TypeScript 实现）。
+面向 **macOS** 的 Google Antigravity 桌面客户端与 `agy` CLI 本地多账号切换工具（TypeScript / Node.js 零运行时依赖实现）。
 
 ## 特性
 
-- **纯本地、零遥测**：只读写本地加密快照与 macOS Keychain，不联网上传任何凭证。
-- **AES-256-GCM 加密存储**：账号快照加密保存在本地 `~/.config/agy-account/`（权限 `0600`），加密主密钥由 macOS Keychain 托管。
-- **双端联动**：覆盖 Keychain 中的 Antigravity / `agy` OAuth 凭证及本地 scope 状态。
-- **防误覆盖保护**：切换前自动检查并备份当前激活状态。
+- **OAuth 一键添加**：内置 Google OAuth2 + PKCE 浏览器授权，授权后自动识别邮箱并生成官方 Keychain 登录态，无需二次登录即可直接切换。
+- **实时额度查看**：支持按需查询并展示每个账号的 **5 小时（5h）** 与 **周（Weekly）** 剩余额度及重置倒计时，切号前一目了然。
+- **循环交互式终端菜单**：直接运行 `agys` 进入驻留菜单，支持方向键 `↑`/`↓`（或 `j`/`k`）选择、`Esc`/`q` 返回上一级。
+- **双端联动与插件保护**：切换时同步更新 `agy` CLI 与 Antigravity Desktop（支持 `--restart` 自动重启），并保护 Google Drive / Docs 等 `antigravity.plugins` 登录态不被误删。
+- **纯本地 AES-256-GCM 加密**：账号快照加密保存在本机 `~/.config/agy-account/`（权限 `0600`），加密主密钥由 macOS Keychain 托管，零遥测上报。
+- **防误覆盖保护**：切换前自动校验当前登录态，未保存的新账号会自动备份为 `_auto_backup`。
 
-## 全局安装与使用
+## 快速安装
 
-在项目目录执行一次构建与全局链接即可在任意路径使用 `agy-account` 或短命令 `agys`：
+> **系统要求**：仅支持 **macOS**，需要 **Node.js >= 22.0.0**。
 
 ```bash
+git clone https://github.com/GotoLu/agys.git
+cd agys
+npm install
 npm run build
 npm link
 ```
 
-链接后即可全局调用：
+安装完成后，在任意终端目录均可直接使用 `agys`（或 `agy-account`）。
+
+## 常用命令
 
 ```bash
-# 直接运行进入循环交互式操作菜单（支持 ↑/↓ 或 j/k 方向键选择，操作后按回车返回菜单）
+# 直接运行进入循环交互式操作菜单（支持 ↑/↓ 或 j/k 移动，Esc/q 返回或退出）
 agys
 # 或 agy-account
 
-# 发起 Google OAuth2 浏览器授权并添加新账号（自动识别邮箱并加密保存凭证）
+# 发起 Google OAuth2 浏览器授权并添加新账号（自动识别邮箱并生成 Keychain 登录态）
 agys add
-agys add pro2 --email your2@gmail.com
+agys add pro2 --email your2@example.com
 
-# 交互式选择要切换的账号（也支持直接指定别名或 "-" 切回上一个）
+# 交互式选择要切换的账号（展示实时 5h/周额度；支持指定别名或 "-" 切回上一个）
 agys use
 agys use pro2 --restart
 agys use -
 
-# 保存当前已登录账号（不填别名则交互引导输入）
+# 保存当前本机已登录账号（不填别名则交互引导输入）
 agys save
-agys save pro1 --email your@gmail.com
+agys save pro1 --email your@example.com
 
-# 查看本机当前 Antigravity 凭证位置与状态摘要（不输出明文密钥）
-agys inspect
-
-# 列出已保存的账号（默认同时展示 5 小时与周额度，加 --no-quota 跳过查询）
+# 列出所有已保存账号及 5 小时/周额度（加 --no-quota 跳过查询）
 agys ls
 agys quota
 agys current
+
+# 查看本机 Antigravity 凭证位置与状态摘要（不输出明文密钥）
+agys inspect
 
 # 删除指定账号快照（交互确认，或加 -y 跳过确认）
 agys rm pro1
 ```
 
-如需全局直接使用 `agy-account` 命令，可在项目目录执行 `npm link`。
+## 安全与使用边界
 
-## 系统要求与安全说明
-
-- **运行环境**：仅支持 **macOS**，需要 **Node.js >= 22.0.0**。
-- **隐私与安全**：所有账号凭证均通过 AES-256-GCM 加密保存在本机 `~/.config/agy-account/`（密钥由 macOS Keychain 托管），无任何遥测或第三方数据上报。
-- **使用边界**：仅用于个人多账号人工显式切换，请勿用于自动化高频轮询或并发代理。
+- **纯本地运行**：除向 Google 官方 OAuth 与 Cloud Code 额度接口发起用户主动触发的请求外，不向任何第三方服务器发送数据。
+- **人工按需切换**：仅用于个人独立订阅账号的人工显式切换与额度查看，请勿用于自动化高频轮询或并发代理。
 
 ## 开发与验证
 
