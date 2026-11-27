@@ -20,6 +20,7 @@
 
 ## 最近完成
 
+- 2026-11-27 13:51 参考 `GotoLu/cx-notifier-marketplace` 完成开源推广与 SEO 基建，并将仓库重命名为 `GotoLu/agys-switcher`：新增 `LICENSE`、`PRIVACY.md`、`SECURITY.md`、`CHANGELOG.md`、`assets/social-preview.svg`、`scripts/install.sh` 一键安装脚本与英文版 `README.en.md`，升级 [README.md](./README.md) 并补全 `package.json` 元数据关键词。
 - 2026-11-24 16:51 按服务粒度隔离 `gemini` 与 `antigravity.plugins` 切换策略：目标快照不含插件条目时保留本机现有 Google Drive 等插件登录态；目标快照含插件条目时同步切换。
 - 2026-11-24 16:45 解析并兼容官方 `go-keyring-base64:` Keychain 凭证格式（`encodeGoKeyringSecret` / `decodeGoKeyringOAuth`），`agys add` 一次 OAuth 授权即可直接 `agys use` 切换，无需二次登录；同时修复 `restartAntigravityDesktop` 轮询等待旧进程彻底退出后再拉起桌面端。
 - 2026-11-24 16:36 新增 `MissingKeychainBindingError` 与 `bindClientKeychainInteractively` 一体化引导向导，`agys add` 授权后可直接引导完成客户端登录态合并绑定；`agys use` 遇到未绑定 Keychain 的账号时可当场引导补绑并完成切换。
@@ -33,6 +34,7 @@
 
 ## 最近验证
 
+- 2026-11-27 13:44 执行 `bash -n scripts/install.sh && npm run typecheck && npm run build && npm test`，脚本语法检查通过，5 个测试套件共 11 条测试用例全部通过。
 - 2026-11-24 16:51 执行 `npm run typecheck && npm run build && npm test`，5 个测试套件共 11 条测试用例全部通过。
 - 2026-11-24 16:45 执行 `npm run typecheck && npm run build && npm test`，5 个测试套件共 10 条测试用例全部通过。
 - 2026-11-24 16:36 执行 `npm run typecheck && npm run build && npm test`，5 个测试套件共 9 条测试用例全部通过。

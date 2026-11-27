@@ -1,7 +1,29 @@
 {
   "name": "agy-account",
   "version": "0.1.0",
-  "description": "Local multi-account credential snapshot & switcher for Google Antigravity Desktop and agy CLI on macOS",
+  "description": "Local multi-account credential snapshot, quota monitor & switcher for Google Antigravity Desktop and agy CLI on macOS",
+  "license": "MIT",
+  "homepage": "https://github.com/GotoLu/agys-switcher#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GotoLu/agys-switcher.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GotoLu/agys-switcher/issues"
+  },
+  "keywords": [
+    "antigravity",
+    "google-antigravity",
+    "agy",
+    "agy-cli",
+    "agys",
+    "multi-account",
+    "account-switcher",
+    "quota",
+    "macos",
+    "keychain",
+    "cli"
+  ],
   "type": "module",
   "bin": {
     "agy-account": "./dist/cli.js",

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640" role="img" aria-label="agys - Google Antigravity Multi-Account Switcher and Quota Monitor for macOS">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1020"/>
+      <stop offset="55%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <radialGradient id="glowBlue" cx="18%" cy="22%" r="48%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowEmerald" cx="82%" cy="78%" r="46%">
+      <stop offset="0%" stop-color="#34D399" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#34D399" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#020617" flood-opacity="0.65"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bgGrad)"/>
+  <rect width="1280" height="640" fill="url(#glowBlue)"/>
+  <rect width="1280" height="640" fill="url(#glowEmerald)"/>
+
+  <!-- Subtle Grid -->
+  <g stroke="#1E293B" stroke-opacity="0.45" stroke-width="1">
+    <path d="M0 80 H1280 M0 160 H1280 M0 240 H1280 M0 320 H1280 M0 400 H1280 M0 480 H1280 M0 560 H1280"/>
+    <path d="M160 0 V640 M320 0 V640 M480 0 V640 M640 0 V640 M800 0 V640 M960 0 V640 M1120 0 V640"/>
+  </g>
+
+  <!-- Left Column: Brand & Pitch -->
+  <g transform="translate(76, 84)">
+    <!-- Pill Badge -->
+    <rect x="0" y="0" width="286" height="34" rx="17" fill="#0F172A" stroke="#334155" stroke-width="1.2"/>
+    <circle cx="20" cy="17" r="5" fill="#34D399"/>
+    <text x="36" y="22" fill="#CBD5E1" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC', sans-serif" font-size="14" font-weight="600">macOS · Antigravity Desktop &amp; agy CLI</text>
+
+    <!-- Title -->
+    <text x="0" y="114" fill="#F8FAFC" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif" font-size="72" font-weight="800" letter-spacing="-1.5">agys</text>
+    <text x="184" y="110" fill="url(#accentGrad)" font-family="'SF Mono', ui-monospace, Menlo, monospace" font-size="24" font-weight="700">agy-account</text>
+
+    <!-- Subtitle CN -->
+    <text x="0" y="168" fill="#E2E8F0" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', sans-serif" font-size="28" font-weight="700">Google Antigravity 多账号秒切与额度看板</text>
+
+    <!-- Subtitle EN -->
+    <text x="0" y="206" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif" font-size="18">Local multi-account switcher &amp; 5h / weekly quota monitor</text>
+
+    <!-- Feature Pills -->
+    <g transform="translate(0, 246)">
+      <rect x="0" y="0" width="470" height="48" rx="12" fill="#111827" fill-opacity="0.85" stroke="#1E293B" stroke-width="1.2"/>
+      <text x="18" y="30" fill="#38BDF8" font-family="'SF Mono', monospace" font-size="15" font-weight="700">01</text>
+      <text x="52" y="30" fill="#E2E8F0" font-family="-apple-system, 'PingFang SC', sans-serif" font-size="16" font-weight="500">OAuth2 + PKCE 浏览器一键加号，无需二次登录</text>
+
+      <rect x="0" y="60" width="470" height="48" rx="12" fill="#111827" fill-opacity="0.85" stroke="#1E293B" stroke-width="1.2"/>
+      <text x="18" y="90" fill="#34D399" font-family="'SF Mono', monospace" font-size="15" font-weight="700">02</text>
+      <text x="52" y="90" fill="#E2E8F0" font-family="-apple-system, 'PingFang SC', sans-serif" font-size="16" font-weight="500">切号前实时查看 5h / 周剩余额度与重置倒计时</text>
+
+      <rect x="0" y="120" width="470" height="48" rx="12" fill="#111827" fill-opacity="0.85" stroke="#1E293B" stroke-width="1.2"/>
+      <text x="18" y="150" fill="#A78BFA" font-family="'SF Mono', monospace" font-size="15" font-weight="700">03</text>
+      <text x="52" y="150" fill="#E2E8F0" font-family="-apple-system, 'PingFang SC', sans-serif" font-size="16" font-weight="500">AES-256-GCM + Keychain 加密 · 零遥测 · 零依赖</text>
+    </g>
+
+    <!-- Footer Repo -->
+    <text x="0" y="470" fill="#64748B" font-family="'SF Mono', ui-monospace, Menlo, monospace" font-size="15">github.com/GotoLu/agys-switcher</text>
+  </g>
+
+  <!-- Right Column: Terminal Window -->
+  <g transform="translate(612, 86)" filter="url(#cardShadow)">
+    <rect x="0" y="0" width="592" height="468" rx="18" fill="#0B1120" stroke="#334155" stroke-width="1.5"/>
+
+    <!-- Window Header -->
+    <rect x="0" y="0" width="592" height="44" rx="18" fill="#111827"/>
+    <rect x="0" y="24" width="592" height="20" fill="#111827"/>
+    <line x1="0" y1="44" x2="592" y2="44" stroke="#1E293B" stroke-width="1"/>
+    <circle cx="24" cy="22" r="6.5" fill="#EF4444"/>
+    <circle cx="46" cy="22" r="6.5" fill="#F59E0B"/>
+    <circle cx="68" cy="22" r="6.5" fill="#10B981"/>
+    <text x="296" y="27" text-anchor="middle" fill="#94A3B8" font-family="'SF Mono', ui-monospace, Menlo, monospace" font-size="13">agys — interactive switcher</text>
+
+    <!-- Terminal Content -->
+    <g transform="translate(26, 76)" font-family="'SF Mono', ui-monospace, Menlo, Consolas, monospace">
+      <text x="0" y="0" fill="#34D399" font-size="15" font-weight="700">$</text>
+      <text x="18" y="0" fill="#F8FAFC" font-size="15" font-weight="600">agys use</text>
+
+      <text x="0" y="34" fill="#94A3B8" font-size="13">? 选择要切换的 Antigravity 账号 (↑/↓ 选择, Enter 确认)</text>
+
+      <!-- Account 1 (Active) -->
+      <rect x="-10" y="54" width="560" height="72" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="6" y="80" fill="#64748B" font-size="14">  pro1</text>
+      <text x="76" y="80" fill="#94A3B8" font-size="13">pro1@example.com</text>
+      <rect x="468" y="64" width="68" height="22" rx="11" fill="#1E293B"/>
+      <text x="502" y="79" text-anchor="middle" fill="#94A3B8" font-size="11">当前激活</text>
+      <text x="22" y="108" fill="#F87171" font-size="13">5h: 12% (1h 18m)</text>
+      <text x="200" y="108" fill="#64748B" font-size="13">|</text>
+      <text x="220" y="108" fill="#FBBF24" font-size="13">周: 34% (2d 4h)</text>
+
+      <!-- Account 2 (Selected) -->
+      <rect x="-10" y="138" width="560" height="76" rx="10" fill="#0C223A" stroke="#38BDF8" stroke-width="1.5"/>
+      <text x="6" y="166" fill="#38BDF8" font-size="15" font-weight="700">❯ pro2</text>
+      <text x="82" y="166" fill="#E2E8F0" font-size="13" font-weight="600">pro2@example.com</text>
+      <rect x="454" y="150" width="82" height="22" rx="11" fill="#064E3B"/>
+      <text x="495" y="165" text-anchor="middle" fill="#34D399" font-size="11" font-weight="700">额度充足</text>
+      <text x="22" y="196" fill="#34D399" font-size="13" font-weight="700">5h: 100% (5h 00m)</text>
+      <text x="200" y="196" fill="#475569" font-size="13">|</text>
+      <text x="220" y="196" fill="#34D399" font-size="13" font-weight="700">周: 92% (5d 11h)</text>
+
+      <!-- Account 3 -->
+      <rect x="-10" y="226" width="560" height="72" rx="10" fill="#0F172A" stroke="#1E293B" stroke-width="1"/>
+      <text x="6" y="252" fill="#CBD5E1" font-size="14">  work</text>
+      <text x="76" y="252" fill="#94A3B8" font-size="13">work@example.com</text>
+      <text x="22" y="280" fill="#34D399" font-size="13">5h: 85% (3h 42m)</text>
+      <text x="200" y="280" fill="#64748B" font-size="13">|</text>
+      <text x="220" y="280" fill="#34D399" font-size="13">周: 78% (4d 9h)</text>
+
+      <!-- Status Output -->
+      <text x="0" y="332" fill="#34D399" font-size="13.5" font-weight="700">✔ 已切换至 pro2 · agy CLI &amp; Desktop 凭证已同步</text>
+      <text x="0" y="358" fill="#94A3B8" font-size="12.5">  已保留 antigravity.plugins 登录态 · 未保存旧账号自动备份</text>
+    </g>
+  </g>
+</svg>
